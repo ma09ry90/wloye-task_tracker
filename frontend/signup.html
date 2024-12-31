@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>Wloye Task Tracker</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+  <section id="signup">
+  <h2>Sign Up</h2>
+  <form action="../backend/backend.php" method="post">
+      <label for="new-username">Username:</label>
+      <input type="text" id="new-username" name="new_username" required>
+
+      <label for="new-password">Password:</label>
+      <input type="password" id="new-password" name="new_password" required>
+
+      <button type="submit" name="action" value="signup">Sign Up</button>
+  </form>
+  </section>
+</body>
+</html>
