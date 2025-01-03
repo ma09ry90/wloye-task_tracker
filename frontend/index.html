@@ -4,39 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wloye Task Tracker</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <header>
         <h1>Wloye Task Tracker</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <section id="tasks">
-            <h2>Your Tasks</h2>
+        <!-- Task Form -->
+        <section>
+            <h2>Add New Task</h2>
+            <form id="task-form">
+                <label for="task-name">Task Name:</label>
+                <input type="text" id="task-name" name="task_name" required>
+
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="Personal">Personal</option>
+                    <option value="Career">Career</option>
+                    <option value="Special">Special</option>
+                </select>
+
+                <label for="due-date">Due Date:</label>
+                <input type="date" id="due-date" name="due_date" required>
+
+                <label for="attachment">Attachment:</label>
+                <input type="file" id="attachment" name="attachment">
+
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+
+        <!-- Task List -->
+        <section>
+            <h2>Task List</h2>
             <table>
                 <thead>
                     <tr>
                         <th>Task Name</th>
                         <th>Category</th>
                         <th>Due Date</th>
+                        <th>Attachment</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="task-table-body"></tbody>
+                <tbody id="task-table-body">
+                    <!-- Tasks will be dynamically added here -->
+                </tbody>
             </table>
         </section>
+
+        <!-- Update Form -->
+        <section id="update-form-container"></section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Wloye Task Tracker. All Rights Reserved.</p>
+        <p>© 2024 Wloye Task Tracker</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/app.js"></script>
 </body>
 </html>
