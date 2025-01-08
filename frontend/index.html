@@ -5,42 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wloye Task Tracker</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-    <header>
-        <h1>Wloye Task Tracker</h1>
-    </header>
+<body class="index-body">
+    <header class="header">
+        <a href="#" class="logo">wloye</a>
+    
+        <nav class="navbar">
+          <a href="home.html" class="active">HOME</a>
+          <a href="login.html">Login</a>
+          <a href="#">About</a>
+        </nav>
+    
+        <div class="social-media">
+          <a href="#" ><i class='bx bxl-instagram-alt' ></i></a>
+          <a href="https://web.telegram.org/a/#-1002151209262"><i class='bx bxl-telegram' style="transform: rotate(-45deg);"></i></a>
+        </div>
+      </header>
 
     <main>
-        <!-- Task Form -->
-        <section>
-            <h2>Add New Task</h2>
-            <form id="task-form">
-                <label for="task-name">Task Name:</label>
-                <input type="text" id="task-name" name="task_name" required>
-
-                <label for="category">Category:</label>
-                <select id="category" name="category" required>
-                    <option value="Personal">Personal</option>
-                    <option value="Career">Career</option>
-                    <option value="Special">Special</option>
-                </select>
-
-                <label for="due-date">Due Date:</label>
-                <input type="date" id="due-date" name="due_date" required>
-
-                <label for="attachment">Attachment:</label>
-                <input type="file" id="attachment" name="attachment">
-
-                <button type="submit">Add Task</button>
-            </form>
-        </section>
-
         <!-- Task List -->
-        <section>
-            <h2>Task List</h2>
-            <table>
-                <thead>
+        <section class="task">
+            <h2 style="text-align: center; margin-bottom: 2%; color: blue;">Task List</h2>
+            <table class="task-table">
+                <thead >
                     <tr>
                         <th>Task Name</th>
                         <th>Category</th>
@@ -57,12 +45,30 @@
 
         <!-- Update Form -->
         <section id="update-form-container"></section>
+                <!-- Task Form -->
+        <section class="task-form">
+            <h2 style="text-align: center; margin-bottom: 2%; color: blue;">Add New Task</h2>
+                <form id="task-form">
+                    <label for="task-name">Task Name:</label>
+                    <input type="text" id="task-name" name="task_name" required>
+        
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="Personal">Personal</option>
+                        <option value="Career">Career</option>
+                        <option value="Special">Special</option>
+                    </select>
+        
+                    <label for="due-date">Due Date:</label>
+                    <input type="date" id="due-date" name="due_date" required>
+        
+                    <label for="attachment">Attachment:</label>
+                    <input type="file" id="attachment" name="attachment">
+        
+                    <button type="submit">Add Task</button>
+                </form>
+                </section>
     </main>
-
-    <footer>
-        <p>© 2024 Wloye Task Tracker</p>
-    </footer>
-
     <!-- JavaScript -->
     <script src="./js/app.js"></script>
 </body>
