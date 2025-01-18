@@ -32,14 +32,51 @@ body {
   color: #2196f3;
   text-decoration:none ;
   font-weight: 600;
+  animation: slideRight 1s ease forwards;
+}
+@keyframes  slideRight {
+  0% {
+      transform: translateX(-100px);
+      opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes  slidetop {
+  0% {
+      transform: translateY(-100px);
+      opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes  slidesci {
+  0% {
+      transform: translateX(100px) rotate(45deg);
+      opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) rotate(45deg);
+    opacity: 1;
+  }
 }
 .navbar a{
+  display: inline-block;
   font-size: 18px;
   color: black;
   text-decoration: none;
   font-weight: 500;
   margin: 0 20px;
   transition: .3s;
+  animation: slidetop 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
 }
 .navbar a:hover,
 .navbar a.active {
@@ -61,13 +98,15 @@ body {
   text-decoration: none;
   transform: rotate(45deg);
   transition: .5s;
+  animation: slidesci 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
 }
 .social-media a:hover{
   border-color: white;
 }
 .social-media a i {
   font-size: 24px;
-  color: #2196f3;
+  color: white;
   transform: rotate(45deg);
 }
 .header h1{
@@ -188,27 +227,25 @@ body {
 .task-table tr th{
  
   height: 10%;
-  background-color: #fff7ff;
   padding: .8rem 1rem;
 }
 table, th, td{
   width: 100%;
   height: 10%;
-  background-color: #fff4;
   padding: 1rem;
 
 }
 thead th {
   position: sticky;
+  background-color: #fff6;
   top: 0;
   left: 0;
-  background-color: #d5d1defe;
 }
 tbody tr:nth-child(even) {
   background-color: #0000000b;
 }
 tbody tr:hover {
-  background-color: #fff6;
+  
 }
 .task-form {
   box-shadow: 0 .4rem .8rem #0005;
@@ -235,7 +272,7 @@ button:active {
 }
 
 button[type="submit"] {
-  background-color: #4caf50; 
+  background-color: #2196f3; 
 }
 
 button[type="button"] {
@@ -298,14 +335,19 @@ form button {
   font-size: 50px;
   color: black;
   margin: 15px 0 30px;
+  transform: rotate(45deg);
+  animation: slidetop 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
 }
 .home-content h3{
   font-size: 40px;
   color: #2196f3;
+  animation: slideRight 1s ease forwards;
 }
 .home-content p{
   font-size: 16px;
   margin: 15px 0 30px;
+  animation: slideRight 1s ease forwards;
 }
 .home-content .button {
   border: 2px solid #2196f3;
@@ -315,6 +357,7 @@ form button {
   font-weight: 600;
   background: #2196f3;
   color: white;
+  animation: slideRight 1s ease forwards;
 }
 .home-content .button:hover {
   color: blue;
@@ -336,7 +379,7 @@ form button {
   box-shadow: -15px 15px 15px rgb(15, 15, 2);
 }
 .home-img .rhombus img {
-  position: relative;
+  position: absolute;
   top: 100px;
   left: -100px;
   max-width: 500px;
@@ -345,7 +388,7 @@ form button {
   border-radius: 150px;
 }
 .home .rhombus2 {
-  position: relative;
+  position: absolute;
   top: -125%;
   right: -50%;
   width: 800px;
@@ -353,4 +396,118 @@ form button {
   background: blue;
   transform: rotate(90deg);
   z-index: -1;
+}
+.about-us {
+    padding: 20px;
+    width: 100%;
+    margin-top: 7%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-right: 70%;
+    box-shadow: white;
+    background-color: lightblue;
+}
+.about-us h1 {
+  margin: 12px 12px;
+  text-align: center;
+  color: blue;
+  animation: slidetop 1s ease forwards;
+}
+.about-us h2 {
+  margin: 12px 12px 12px 12px;
+  text-align: center;
+  color: white ;
+  animation: slideRight 1s ease forwards;
+}
+.hulu{
+  height: 100vh;
+  background-color: blue;
+  color: white;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px; 
+  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hulu .mission {
+  padding: 40px;
+  width:50vh;
+  height: 50vh;
+  box-shadow: 0 2px 5px white;
+  border-radius: 8px;
+  margin-top: 2%;
+  line-height: 25px;
+  animation: slideRight 1s ease forwards;
+}
+.hulu .mission h2{
+  padding: auto;
+  margin-bottom: 50px;
+  text-align: center;
+  animation: slidetop 1s ease forwards;
+}
+.hulu .story {
+  padding: 40px;
+  width: 50vh;
+  height: 50vh;
+  box-shadow: 0 2px 5px white;
+  border-radius: 8px;
+  margin-top: 2%;
+  line-height: 25px;
+  animation: slideRight 1s ease forwards;
+}
+.hulu .story h2{
+  padding: auto;
+  margin-bottom: 50px;
+  text-align: center;
+  animation: slidetop 1s ease forwards;
+}
+.hulu .offer {
+  padding: 40px;
+  width: 50vh;
+  height: 50vh;
+  box-shadow: 0 2px 5px white;
+  border-radius: 8px;
+  margin-top: 2%;
+  line-height: 25px;
+  animation: slideRight 1s ease forwards;
+}
+.hulu .offer h2{
+  padding: auto;
+  margin-bottom: 50px;
+  text-align: center;
+  animation: slidetop 1s ease forwards;
+}
+.hulu .why-choose {
+  padding: 40px;
+  width: 50vh;
+  height: 50vh;
+  box-shadow: 0 2px 5px white;
+  border-radius: 8px;
+  margin-top: 2%;
+  line-height: 25px;
+  animation: slideRight 1s ease forwards;
+}
+.hulu .why-choose h2{
+  padding: auto;
+  margin-bottom: 50px;
+  text-align: center;
+  animation: slidetop 1s ease forwards;
+}
+.hulu .contact {
+  padding: 50px;
+  width: 50vh;
+  box-shadow: 0px 0px 5px white;
+  border-radius: 8px;
+  background-color: blue;
+  color: white;
+  flex-basis: 100%; /* Push to the next line */
+  text-align: center;
+  animation: slideRight 1s ease forwards;
+}
+.hulu .contact h2{
+  padding: auto;
+  margin-bottom: 50px;
+  text-align: center;
+  animation: slidetop 1s ease forwards;
 }

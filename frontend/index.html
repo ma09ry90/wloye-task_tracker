@@ -13,8 +13,7 @@
     
         <nav class="navbar">
           <a href="home.html" class="active">HOME</a>
-          <a href="login.html">Login</a>
-          <a href="#">About</a>
+          <a href="index.html">My Tasks</a>
         </nav>
     
         <div class="social-media">
@@ -26,7 +25,7 @@
     <main>
         <!-- Task List -->
         <section class="task">
-            <h2 style="text-align: center; margin-bottom: 2%; color: blue;">Task List</h2>
+            <h2 style="text-align: center; margin-bottom: 2%; color: blue;   animation: slideRight 1s ease forwards;">Task List</h2>
             <table class="task-table">
                 <thead >
                     <tr>
@@ -47,7 +46,7 @@
         <section id="update-form-container"></section>
                 <!-- Task Form -->
         <section class="task-form">
-            <h2 style="text-align: center; margin-bottom: 2%; color: blue;">Add New Task</h2>
+            <h2 style="text-align: center; margin-bottom: 5%; color: blue;   animation: slideRight 1s ease forwards;">Add New Task</h2>
                 <form id="task-form">
                     <label for="task-name">Task Name:</label>
                     <input type="text" id="task-name" name="task_name" required>
@@ -61,12 +60,14 @@
         
                     <label for="due-date">Due Date:</label>
                     <input type="date" id="due-date" name="due_date" required>
-        
+                    <lable for="">Time:</lable>
+                    <input type="time" id="time"/>
                     <label for="attachment">Attachment:</label>
                     <input type="file" id="attachment" name="attachment">
         
-                    <button type="submit">Add Task</button>
+                    <button type="submit" onclick="scheduleReminder();">Add Task</button>
                 </form>
+                <audio src="../frontend\images\notification.wav" id="notificationSound"></audio>
                 </section>
     </main>
     <!-- JavaScript -->

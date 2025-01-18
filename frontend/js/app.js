@@ -45,7 +45,7 @@ const fetchTasks = async () => {
                     </td>
                 </tr>
             `).join('')
-            : '<tr><td colspan="5">No tasks found.</td></tr>';
+            : '<tr><td colspan="5">No tasks added.</td></tr>';
     } catch (error) {
         console.error('Error fetching tasks:', error);
     }
@@ -100,3 +100,68 @@ const deleteTask = async (id) => {
         else alert('Failed to delete task.');
     }
 };
+// ask user to allow notification access
+if("Notification" in window) {
+    Notification.requestPermission().then(function (permission) {
+    if(Notification.permission !== "granted") {
+        alert("Please allow notification access!");
+        location.reload();
+    }
+});
+}
+
+var timeoutIds = [];
+
+function scheduleReminder() {
+    var task_name= document.getElementById("task_name").value;
+    var category= document.getElementById("category").value;
+    var due_date= document.getElementById("due-date").value;
+    var time= document.getElementById("time").value;
+
+    var dateTimeString = date + " " + time;
+    var scheduleTime = new Date(dateTimeString);
+    var currentTime = new Date();
+    var timeDifference = scheduleTime - currentTime;
+
+    if (timeDifference > 0) {
+        addReminder(task_name, category, dateTimeString);
+
+        var timeoutId = setTimeout(function (){
+            document.getElementById("notificationSound").play();
+
+            var notification = new Notification(task_name, {
+                body: category,
+                requireInteraction: true,
+            });
+        }, timeDifference);
+
+      timeoutIds.push(timeoutId);  
+    } else{
+        alert("The schedule time is in the past!");
+    }
+  }
+  function addReminder(task_name, category, dateTimeString){
+    var tablebody = document.getElementById("task-table-body");
+
+    var row= tablebody.insertRow();
+
+    var task_namecell = row.insertcell(0);
+    var categorycell = row.insertcell(1);
+    var due_datecell = row.insertcell(2);
+    var actioncell = row.insertcell(3);
+
+    task_namecell.innerHTML = task_name;
+    categorycell.innerHTML = category;
+    due_datecell.innerHTML = dateTimeString;
+    actioncell.innerHTML = '<button onclick = "deletReminder(this);">Delete</button>';
+  }
+
+  function deletReminder(button){
+    var row = button.closest("tr");
+    var index = row.rowIndex;
+
+    clearTimeoust(timeoutIds[index - 1]);
+    timeoutIds.splice(index -1, 1);
+
+    row.remove();
+  }
